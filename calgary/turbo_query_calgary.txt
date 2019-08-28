@@ -1,0 +1,67 @@
+[out:json][timeout:25][bbox:{{bbox}}];
+(
+  node["shop"="supermarket"];
+  way["shop"="supermarket"];
+  relation["shop"="supermarket"];
+  
+  node["amenity"="restaurant"];
+  way["amenity"="restaurant"];
+  relation["amenity"="restaurant"];
+  
+  node["amenity"="pub"];
+  way["amenity"="pub"];
+  relation["amenity"="pub"];
+  
+  node["leisure"="playground"];
+  way["leisure"="playground"];
+  relation["leisure"="playground"];
+  
+  node["amenity"="school"];
+  way["amenity"="school"];
+  relation["amenity"="school"];
+  
+  node["amenity"="childcare"];
+  way["amenity"="childcare"];
+  relation["amenity"="childcare"];
+  
+  node["leisure"="park"];
+  way["leisure"="park"];
+  relation["leisure"="park"];
+  
+  node["amenity"="fitness_centre"];
+  way["amenity"="fitness_centre"];
+  relation["amenity"="fitness_centre"];
+  
+  node["amenity"="spors_centre"];
+  way["amenity"="spors_centre"];
+  relation["amenity"="spors_centre"];
+  
+  node["amenity"="theatre"];
+  way["amenity"="theatre"];
+  relation["amenity"="theatre"];
+  
+  node["amenity"="cinema"];
+  way["amenity"="cinema"];
+  relation["amenity"="cinema"];
+  
+  node["amenity"="museum"];
+  way["amenity"="museum"];
+  relation["amenity"="museum"];
+  
+  node["amenity"="pharmacy"];
+  way["amenity"="pharmacy"];
+  relation["amenity"="pharmacy"];
+  
+  node["amenity"="clinic"];
+  way["amenity"="clinic"];
+  relation["amenity"="clinic"];
+  
+  node["amenity"="hospital"];
+  way["amenity"="hospital"];
+  relation["amenity"="hospital"];
+  
+  node["amenity"="dentist"];
+  way["amenity"="dentist"];
+  relation["amenity"="dentist"];
+);
+out center;
