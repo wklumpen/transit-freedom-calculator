@@ -78,11 +78,9 @@ for oix, origin in centroids.iterrows():
             schools = 0
             childcares = 0
             parks = 0
-            fitnesses = 0
+            pitches = 0
             theatres = 0
             cinemas = 0
-            museums = 0
-            fitnesses = 0
             pharmacies = 0
             clinics = 0
             dentists = 0
@@ -108,8 +106,8 @@ for oix, origin in centroids.iterrows():
                         childcares += 1
                     elif "leisure" in poi and poi['leisure'] == 'park':
                         parks += 1
-                    elif "amenity" in poi and (poi['amenity'] == 'fitness_centre' or poi['amenity'] == 'sports_centre'):
-                        fitnesses += 1
+                    elif "leisure" in poi and poi['leisure'] == 'pitch':
+                        pitches += 1
                     elif "amenity" in poi and poi['amenity'] == 'theatre':
                         theatres += 1
                     elif "amenity" in poi and poi['amenity'] == 'cinema':
@@ -121,7 +119,7 @@ for oix, origin in centroids.iterrows():
                     elif "amenity" in poi and poi['amenity'] == 'dentist':
                         dentists += 1
 
-            result = [origin.tz, pop, jobs, supermarkets, restaurants, pubs, playgrounds, schools, childcares, parks, fitnesses, theatres, cinemas, pharmacies, clinics, dentists]
+            result = [origin.tz, pop, jobs, supermarkets, restaurants, pubs, playgrounds, schools, childcares, parks, pitches, theatres, cinemas, pharmacies, clinics, dentists]
             result_list.append(result)
             print(result)
             print(f"You can reach {inside} centroids from {origin.tz}")
@@ -130,7 +128,7 @@ for oix, origin in centroids.iterrows():
         print(f"ERROR: {url}")
         errors.append(origin.tz)
 
-out = pd.DataFrame(result_list, columns=['orig', 'population', 'jobs', 'supermarket', 'restaurant', 'pub', 'playground', 'school', 'childcare', 'park', 'fitness', 'theatre', 'cinema', 'pharmacy', 'clinic', 'dentist'])
+out = pd.DataFrame(result_list, columns=['orig', 'population', 'jobs', 'supermarket', 'restaurant', 'pub', 'playground', 'school', 'childcare', 'park', 'pitch', 'theatre', 'cinema', 'pharmacy', 'clinic', 'dentist'])
 
 
 out['pop_pctl'] = out.population.rank(pct=True)
@@ -160,8 +158,8 @@ choices     = [ "F", 'D', 'C', "B", "A", "A+"]
 out['family_grade'] = np.select(conditions, choices, default=np.nan)
 
 out['park_pctl'] = out.park.rank(pct=True)
-out['fitness_pctl'] = out.fitness.rank(pct=True)
-out['recreation_avg'] = (out.park_pctl + out.fitness_pctl)/2
+out['pitch_pctl'] = out.pitch.rank(pct=True)
+out['recreation_avg'] = (out.park_pctl + out.pitch_pctl)/2
 col = 'recreation_avg'
 conditions  = [ out[col] < 0.2, out[col] < 0.4, out[col] < 0.6, out[col] < 0.8, out[col] < 0.9, out[col] >=0.9 ]
 choices     = [ "F", 'D', 'C', "B", "A", "A+"]

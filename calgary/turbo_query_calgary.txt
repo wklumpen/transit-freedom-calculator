@@ -28,13 +28,9 @@
   way["leisure"="park"];
   relation["leisure"="park"];
   
-  node["amenity"="fitness_centre"];
-  way["amenity"="fitness_centre"];
-  relation["amenity"="fitness_centre"];
-  
-  node["amenity"="spors_centre"];
-  way["amenity"="spors_centre"];
-  relation["amenity"="spors_centre"];
+  node["leisure"="pitch"];
+  way["leisure"="pitch"];
+  relation["leisure"="pitch"];
   
   node["amenity"="theatre"];
   way["amenity"="theatre"];
